@@ -1,4 +1,5 @@
-Darknet for YOLOv3 with screenshot and beep function as well as GPS Overlay
+Darknet for YOLOv3 
+Available add-on like screenshot, beep function and GPS Overlay
 
 Screenshot function placed in line 309 of image.c:
     
