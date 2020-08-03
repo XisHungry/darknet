@@ -3,7 +3,7 @@ Available add-on like screenshot, beep function and GPS Overlay
 
 Screenshot function placed in line 309 of image.c:
     
-    system("scrot '%Y-%m-%d_%H-%M-%S.JPG' -q 100 -e 'mv $f ~/darknet/screenshots'");
+    system("scrot -e 'mv $f ~/darknet/screenshot'");
 
 Beep function placed in line 310 of image.c:
     
