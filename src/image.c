@@ -257,13 +257,14 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
         }
         if(class >= 0){
             int width = im.h * .006;
+
             /*
                if(0){
                width = pow(prob, 1./2.)*10+1;
                alphabet = 0;
                }
              */
-             
+
             //printf("%d %s: %.0f%%\n", i, names[class], prob*100);
             int offset = class*123457 % classes;
             float red = get_color(2,offset,classes);
@@ -288,14 +289,13 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
             if(right > im.w-1) right = im.w-1;
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
-	     
+
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if (alphabet) {
                 image label = get_label(alphabet, labelstr, (im.h*.03));
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
             }
-            
             if (dets[i].mask){
                 image mask = float_to_image(14, 14, 1, dets[i].mask);
                 image resized_mask = resize_image(mask, b.w*im.w, b.h*im.h);
@@ -305,11 +305,6 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
                 free_image(resized_mask);
                 free_image(tmask);
             }
-            
-            system("scrot '%Y-%m-%d_%H-%M-%S.JPG' -q 100 -e 'mv $f ~/darknet/screenshots'");
-            fprintf(stdout, "\aBeep!\n" );
-            /*Old command for beep sound
-            system("paplay /usr/share/sounds/sound-icons/empty-text");*/         
         }
     }
 }
