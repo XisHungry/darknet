@@ -4,8 +4,10 @@
 #include "stdlib.h"
 #include "opencv2/opencv.hpp"
 #include "image.h"
+#include "iostream"
 
 using namespace cv;
+using namespace std;
 
 extern "C" {
 
@@ -113,7 +115,13 @@ image load_image_cv(char *filename, int channels)
 int show_image_cv(image im, const char* name, int ms)
 {
     Mat m = image_to_mat(im);
-    imshow(name, m);
+    
+    std::string GPS;
+    ifstream FileGPS("GPS.txt");
+    FileGPS >> GPS;
+    putText(m, GPS, Point(0, 470), FONT_HERSHEY_SIMPLEX, 0.4, CV_RGB(199, 21, 133), 0.1);
+    
+    imshow("name", m);
     int c = waitKey(ms);
     if (c != -1) c = c%256;
     return c;
