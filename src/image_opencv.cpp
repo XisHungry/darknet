@@ -121,7 +121,7 @@ int show_image_cv(image im, const char* name, int ms)
     FileGPS >> GPS;
     putText(m, GPS, Point(0, 470), FONT_HERSHEY_SIMPLEX, 0.4, CV_RGB(199, 21, 133), 0.1);
     
-    imshow("name", m);
+    imshow(name, m);
     int c = waitKey(ms);
     if (c != -1) c = c%256;
     return c;
