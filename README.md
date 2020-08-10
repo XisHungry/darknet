@@ -1,6 +1,5 @@
-
-
-Description, Setup and Explanation
+# Yolo & Darknet
+Darknet for YOLOv3 with screenshot and beep function as well as GPS Overlay
 
 ## Contents
 1. Description
@@ -24,19 +23,19 @@ Refer to my documentation link
 
 #### Add ons
 
-**Auto screenshot upon detection**
+###### Auto screenshot upon detection
 Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to line 308. This line of code is responsible for performing a screenshot upon detection and drawing of boundary boxes. 
 
 - system is a C programming command to activate terminal on Ubuntu
 - scrot translate to screenshot, self explanatory.
 - -e 'mv $f ~/darknet/screenshot' sets the directory to store the image
 
-**Beeping sound upon detection**
+###### Beeping sound upon detection
 Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to line 309. This line of code is responsible for beeping upon detection and drawing of boundary boxes.
 
 - fprintf(stdout, "\aBeep!\n" ) outputs a beeping sound and print ‘Beep’ on the terminal
 
-**GPS data overlay on detection frame**
+###### GPS data overlay on detection frame
 Navigate to this directory: darknet/src and open ‘image_opencv.cpp Scroll down to line 6 and 8.
 
 - #include "iostream" and using namespace std; are just declarations
