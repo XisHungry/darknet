@@ -27,8 +27,8 @@ Refer to my documentation link
 Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to line 308. This line of code is responsible for performing a screenshot upon detection and drawing of boundary boxes. 
 
 - system is a C programming command to activate terminal on Ubuntu
-- scrot translate to screenshot, self explanatory.
-- -e 'mv $f ~/darknet/screenshot' sets the directory to store the image
+- scrot translate to screenshot, self explanatory
+- ~/darknet/screenshots/%b%d::%H%M%S.jpeg - q100 sets the directory to store the image as date and time with minimal compression
 
 ###### Beeping sound upon detection
 Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to line 309. This line of code is responsible for beeping upon detection and drawing of boundary boxes.
@@ -44,8 +44,8 @@ Further scroll down to line 106 to 109.
 
 - std::string GPS; is to declare GPS variable as string
 - ifstream FileGPS("GPS.txt"); is to initialize the text file containing GPS data
-- FileGPS >> GPS; is to store the GPS data from the text file into the GPS variable declared above.
-- putText(m, GPS, Point(0, 470), FONT_HERSHEY_SIMPLEX, 0.4, CV_RGB(199, 21, 133), 0.1); is to set the parameters for insert GPS data into the frame.
+- FileGPS >> GPS; is to store the GPS data from the text file into the GPS variable declared above
+- putText(m, GPS, Point(0, 470), FONT_HERSHEY_SIMPLEX, 0.4, CV_RGB(199, 21, 133), 0.1); is to set the parameters for insert GPS data into the frame
 
 ## 4. Results
 Upon detection, a pink boundary box will appear for visual impact. When the pink boundary box appears, a screenshot will be made and stored to a specified directory for further analysis. A beeping sound will be produced as well for auditory impact.
