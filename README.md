@@ -28,7 +28,7 @@ Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to l
 
 - system is a C programming command to activate terminal on Ubuntu
 - scrot translate to screenshot, self explanatory
-- ~/darknet/screenshots/%b%d::%H%M%S.jpeg - q100 sets the directory to store the image as date and time with minimal compression
+- ~/darknet/screenshots/%b%d::%H%M%S.jpeg -q100 sets the directory to store the image as date and time with minimal compression
 
 ###### Beeping sound upon detection
 Navigate to this directory: darknet/src and open ‘image.c’. Scroll down to line 309. This line of code is responsible for beeping upon detection and drawing of boundary boxes.
