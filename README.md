@@ -1,4 +1,4 @@
-# Yolo & Darknet
+# darknet-yolo
 Darknet for YOLOv3 with screenshot and beep function as well as GPS Overlay
 
 ## Contents
