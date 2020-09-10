@@ -305,7 +305,7 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
                 free_image(resized_mask);
                 free_image(tmask);
             }
-            system("scrot ~/darknet/screenshot/%b%d::%H%M%S.jpeg -q 100");
+            system("scrot ~/darknet-yolo/screenshot/%b%d::%H%M%S.jpeg -q 100");
             fprintf(stdout, "\aBeep!\n" );
         }
     }
